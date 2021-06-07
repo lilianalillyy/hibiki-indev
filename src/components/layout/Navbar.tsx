@@ -1,17 +1,17 @@
-import { RenderableProps, ComponentProps } from "preact";
+import { PropsWithChildren, ComponentProps } from "react";
 import { transition } from "../../tailwind";
 import { name, slogan } from "../../constants";
 import { LinkButton } from "../elements/Button";
 
 // TODO: Use RouterLink
-const NavLink = ({ children, className = "", href = "#", ...props }: RenderableProps<ComponentProps<"a">>) => (
+const NavLink = ({ children, className = "", href = "#", ...props }: PropsWithChildren<ComponentProps<"a">>) => (
   <a href={href} className={`text-black hover:text-gray-600 ${transition} ${className} font-medium`} {...props}>
     {children}
   </a>
 );
 
 const Navbar = () => {
-  const navLinks: RenderableProps<ComponentProps<"a">>[] = [
+  const navLinks: PropsWithChildren<ComponentProps<"a">>[] = [
     { href: "/invite", children: "Invite" },
     { href: "/donate", children: "Donate" },
     { href: "/support", children: "Support" },

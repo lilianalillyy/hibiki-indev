@@ -1,5 +1,5 @@
-import type { Component, ComponentProps, RenderableProps } from "preact";
-import { useMemo } from "preact/hooks";
+import type { Component, ComponentProps, PropsWithChildren } from "react";
+import { useMemo } from "react";
 import { transition } from "../../tailwind";
 
 type ButtonType = "outline-black" | "white";
@@ -15,7 +15,7 @@ const buttonTypeClasses = {
 
 const useButtonTypeClass = (type: keyof typeof buttonTypeClasses) => useMemo(() => buttonTypeClasses[type], [type]);
 
-const Button = ({ type = "white", children, className = "", ...props }: RenderableProps<ComponentProps<"button"> & ButtonProps>) => {
+const Button = ({ type = "white", children, className = "", ...props }: PropsWithChildren<ComponentProps<"button"> & ButtonProps>) => {
   const classes = useButtonTypeClass(type);
 
   return (
@@ -25,7 +25,7 @@ const Button = ({ type = "white", children, className = "", ...props }: Renderab
   );
 };
 
-const LinkButton = ({ type = "white", children, className = "", ...props }: RenderableProps<ComponentProps<"a"> & ButtonProps>) => {
+const LinkButton = ({ type = "white", children, className = "", ...props }: PropsWithChildren<ComponentProps<"a"> & ButtonProps>) => {
   const classes = useButtonTypeClass(type);
 
   return (
