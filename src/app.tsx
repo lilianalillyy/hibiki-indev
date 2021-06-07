@@ -9,17 +9,8 @@ import { mainBackground } from "./pages/landing/sections/MainHero";
 
 const transition = "transition duration-300 ease-in-out";
 
-const NavLink = ({
-  children,
-  className = "",
-  href = "#",
-  ...props
-}: RenderableProps<ComponentProps<"a">>) => (
-  <a
-    href={href}
-    className={`text-black hover:text-gray-600 ${transition} ${className} font-medium`}
-    {...props}
-  >
+const NavLink = ({ children, className = "", href = "#", ...props }: RenderableProps<ComponentProps<"a">>) => (
+  <a href={href} className={`text-black hover:text-gray-600 ${transition} ${className} font-medium`} {...props}>
     {children}
   </a>
 );
@@ -29,12 +20,9 @@ const App = () => (
     <div className="h-screen">
       <div className="w-full h-full p-6 pt-0">
         {/* extra x padding for nav because of the rounded edges  */}
-        <nav class="py-6 px-6 flex items-center justify-center">
+        <nav className="py-6 px-6 flex items-center justify-center">
           <div className="w-full flex justify-start items-center">
-            <a
-              href="#"
-              className={`text-black hover:text-gray-600 ${transition}`}
-            >
+            <a href="#" className={`text-black hover:text-gray-600 ${transition}`}>
               <h1 className="font-medium text-2xl">Hibiki</h1>
               <h2>The ultimate all-in-one Discord bot.</h2>
             </a>
@@ -52,13 +40,7 @@ const App = () => (
               className={`inline-flex justify-center items-center border-2 text-black hover:text-primary border-black hover:border-primary hover:shadow-2xl py-1 px-6 rounded-full ${transition}`}
             >
               <span className="mr-2">
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -71,18 +53,13 @@ const App = () => (
             </a>
           </div>
         </nav>
-        <div
-          className={`w-full h-full rounded-3xl hover:shadow-2xl cursor-pointer ${transition}`}
-          style={mainBackground}
-        >
+        <div className={`w-full h-full rounded-3xl hover:shadow-2xl cursor-pointer ${transition}`} style={mainBackground}>
           <div className="flex flex-col-reverse md:flex-row h-full max-w-7xl w-full mx-auto">
             <div className="w-full h-full flex justify-center md:justify-start items-center">
               <div className="text-center md:text-left">
                 <div className="text-white mb-8">
                   <h1 className="text-6xl md:text-8xl font-medium">Hibiki</h1>
-                  <h1 className="text-2xl md:text-4xl font-medium">
-                    The ultimate all-in-one Discord bot.
-                  </h1>
+                  <h1 className="text-2xl md:text-4xl font-medium">The ultimate all-in-one Discord bot.</h1>
                 </div>
                 <div>
                   <a
@@ -107,22 +84,12 @@ const App = () => (
                 className={`bg-cyan-400 w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
               >
                 <div>
-                  <h1 class="text-4xl md:text-5xl font-bold">
-                    Make your server more fun.
-                  </h1>
-                  <h2 class="text-xl md:text-2xl font-medium">
-                    Hibiki comes with many fun and image commands.
-                  </h2>
+                  <h1 className="text-4xl md:text-5xl font-bold">Make your server more fun.</h1>
+                  <h2 className="text-xl md:text-2xl font-medium">Hibiki comes with many fun and image commands.</h2>
                 </div>
                 <div className="flex w-full mt-10 items-center justify-center">
                   <div className="flex flex-col w-full justify-center items-center mr-8">
-                    <svg
-                      className="w-16 h-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -130,18 +97,10 @@ const App = () => (
                         d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <p className="w-full font-bold text-center">
-                      Get pictures of various animals
-                    </p>
+                    <p className="w-full font-bold text-center">Get pictures of various animals</p>
                   </div>
                   <div className="flex flex-col w-full justify-center items-center mr-8">
-                    <svg
-                      className="w-16 h-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -150,18 +109,10 @@ const App = () => (
                       />
                     </svg>
 
-                    <p className="w-full font-bold text-center">
-                      Roleplay with server members
-                    </p>
+                    <p className="w-full font-bold text-center">Roleplay with server members</p>
                   </div>
                   <div className="flex flex-col w-full justify-center items-center">
-                    <svg
-                      className="w-16 h-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -169,9 +120,7 @@ const App = () => (
                         d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
                       />
                     </svg>
-                    <p className="w-full font-bold text-center">
-                      Compete in the cookie economy
-                    </p>
+                    <p className="w-full font-bold text-center">Compete in the cookie economy</p>
                   </div>
                 </div>
                 <div className="flex justify-end w-full mt-16">
@@ -186,22 +135,12 @@ const App = () => (
                 className={`bg-teal-400 w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
               >
                 <div>
-                  <h1 class="text-4xl md:text-5xl font-bold">
-                    Increase your server's productivity.
-                  </h1>
-                  <h2 class="text-xl md:text-2xl font-medium">
-                    Hibiki provides useful utilities to boost your productivity.
-                  </h2>
+                  <h1 className="text-4xl md:text-5xl font-bold">Increase your server's productivity.</h1>
+                  <h2 className="text-xl md:text-2xl font-medium">Hibiki provides useful utilities to boost your productivity.</h2>
                 </div>
                 <div className="flex w-full mt-10 items-center justify-center">
                   <div className="flex flex-col w-full justify-center items-center mr-8">
-                    <svg
-                      className="w-16 h-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -209,18 +148,10 @@ const App = () => (
                         d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                       />
                     </svg>
-                    <p className="w-full font-bold text-center">
-                      Define a word from the dictionary
-                    </p>
+                    <p className="w-full font-bold text-center">Define a word from the dictionary</p>
                   </div>
                   <div className="flex flex-col w-full justify-center items-center mr-8">
-                    <svg
-                      className="w-16 h-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -229,18 +160,10 @@ const App = () => (
                       />
                     </svg>
 
-                    <p className="w-full font-bold text-center">
-                      Translate text between languages
-                    </p>
+                    <p className="w-full font-bold text-center">Translate text between languages</p>
                   </div>
                   <div className="flex flex-col w-full justify-center items-center">
-                    <svg
-                      className="w-16 h-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -248,9 +171,7 @@ const App = () => (
                         d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    <p className="w-full font-bold text-center">
-                      Convert currencies between each other
-                    </p>
+                    <p className="w-full font-bold text-center">Convert currencies between each other</p>
                   </div>
                 </div>
                 <div className="flex justify-end w-full mt-16">
@@ -267,22 +188,14 @@ const App = () => (
                 className={`bg-rose-400 text-white w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
               >
                 <div>
-                  <h1 class="text-4xl md:text-5xl font-bold">
-                    Everything is free, forever.
-                  </h1>
-                  <h2 class="text-xl md:text-2xl font-medium">
-                    We'll never lock features behind a paywall.
-                  </h2>
+                  <h1 className="text-4xl md:text-5xl font-bold">Everything is free, forever.</h1>
+                  <h2 className="text-xl md:text-2xl font-medium">We'll never lock features behind a paywall.</h2>
 
                   <p className="mt-4">
-                    We will never make you donate or vote to unlock features -
-                    unlike big bots that beg for money. Hibiki is a passion
-                    project built by our team of developers that love open
-                    source software.
+                    We will never make you donate or vote to unlock features - unlike big bots that beg for money. Hibiki is a passion
+                    project built by our team of developers that love open source software.
                     <br />
-                    The entire codebase is{" "}
-                    <span className="font-bold">free and open-source</span>,
-                    licensed under the GNU AGPLv3 or later.
+                    The entire codebase is <span className="font-bold">free and open-source</span>, licensed under the GNU AGPLv3 or later.
                   </p>
                 </div>
               </div>
@@ -293,19 +206,12 @@ const App = () => (
                   className={`bg-pink-400 text-white w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
                 >
                   <div>
-                    <h1 class="text-4xl md:text-5xl font-bold">
-                      Everything is customizable.
-                    </h1>
-                    <h2 class="text-xl md:text-2xl font-medium">
-                      Hibiki is designed to be tweaked and customized to your
-                      liking.
-                    </h2>
+                    <h1 className="text-4xl md:text-5xl font-bold">Everything is customizable.</h1>
+                    <h2 className="text-xl md:text-2xl font-medium">Hibiki is designed to be tweaked and customized to your liking.</h2>
 
                     <p className="mt-4">
-                      Hibiki is designed to be both simple to use but also
-                      powerful. Most features and modules allow you to tweak
-                      their options to fit your preferences. You can even set
-                      custom thresholds for automod options.
+                      Hibiki is designed to be both simple to use but also powerful. Most features and modules allow you to tweak their
+                      options to fit your preferences. You can even set custom thresholds for automod options.
                     </p>
                   </div>
                 </div>
@@ -316,15 +222,11 @@ const App = () => (
                   className={`bg-violet-400 text-white w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
                 >
                   <div>
-                    <h1 class="text-5xl font-bold">Hibiki is global.</h1>
-                    <h2 class="text-2xl font-medium">
-                      Every command, module, and feature is completely
-                      translatable.
-                    </h2>
+                    <h1 className="text-5xl font-bold">Hibiki is global.</h1>
+                    <h2 className="text-2xl font-medium">Every command, module, and feature is completely translatable.</h2>
 
                     <p className="mt-4">
-                      You can change your preferred language or your server's
-                      default language. We already have many languages complete!
+                      You can change your preferred language or your server's default language. We already have many languages complete!
                     </p>
                   </div>
                 </div>
@@ -338,12 +240,8 @@ const App = () => (
               >
                 {/* not centered here because everything is centered to the left and on phone it looks tupid */}
                 <div className="text-left md:text-center">
-                  <h1 class="text-5xl font-bold">
-                    Ready to improve your server?
-                  </h1>
-                  <h2 class="text-2xl font-medium">
-                    1160 other server owners are already using Hibiki!
-                  </h2>
+                  <h1 className="text-5xl font-bold">Ready to improve your server?</h1>
+                  <h2 className="text-2xl font-medium">1160 other server owners are already using Hibiki!</h2>
 
                   <div className="mt-10 flex flex-col md:flex-row items-center">
                     <a
@@ -373,17 +271,13 @@ const App = () => (
           </div>
           <footer className="py-12 px-4 flex flex-col md:flex-row text-black">
             <div className="w-full flex justify-center md:justify-start items-center text-center md:text-left">
-              <a
-                href="#"
-                className={`flex flex-col hover:text-gray-600 ${transition}`}
-              >
+              <a href="#" className={`flex flex-col hover:text-gray-600 ${transition}`}>
                 <span className="text-2xl font-bold">Hibiki</span>
                 <span className="">The ultimate all-in-one Discord bot.</span>
               </a>
             </div>
             <div className="w-full flex items-center justify-center  text-center md:text-left">
-              {new Date().getFullYear()} &ndash; Hibiki, by sysdotini, resolved,
-              and contributors.
+              {new Date().getFullYear()} &ndash; Hibiki, by sysdotini, resolved, and contributors.
             </div>
             <div className="w-full flex flex-col justify-center items-center md:items-end mt-8 md:mt-0  text-center md:text-left">
               <a href="#" className="font-medium">
