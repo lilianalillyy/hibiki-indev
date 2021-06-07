@@ -1,6 +1,8 @@
 import mainBg from "../../../assets/img/main-bg.svg";
+import { LinkButton } from "../../../components/elements/Button";
 import HeroWrapper from "../../../components/elements/HeroWrapper";
 import Logo from "../../../components/elements/Logo";
+import { name, slogan } from "../../../constants";
 
 const mainBackground = {
   background: `url(${mainBg}) no-repeat`,
@@ -12,41 +14,23 @@ const mainBackground = {
 
 const MainHero = () => (
   <HeroWrapper style={mainBackground}>
-    <div className="max-w-7xl mx-auto w-full h-full flex flex-col md:flex-row justify-center items-center">
-      <div className="w-full flex justify-center items-center">
-        <div className="flex flex-col">
-          <h1 className="text-7xl text-white font-medium">Hibiki</h1>
-          <h2 className="text-4xl text-white font-medium">
-            Lorem ipsum dolor sit amet
-          </h2>
-          <div className="mt-8">
-            <a
-              href="#"
-              className="px-6 py-2 rounded-full text-black bg-white hover:bg-gray-100 inline-flex items-center justify-center font-medium transition duration-200 ease-in-out"
-            >
-              <span className="mr-2 flex justify-start">
-                <svg
-                  class="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  ></path>
-                </svg>
-              </span>
-              <span class="text-xl">Invite Hibiki</span>
-            </a>
+    <div className="flex flex-col-reverse md:flex-row h-full max-w-7xl w-full mx-auto">
+      <div className="w-full h-full flex justify-center md:justify-start items-center">
+        <div className="text-center md:text-left">
+          <div className="text-white mb-8">
+            <h1 className="text-6xl md:text-8xl font-medium">{name}</h1>
+            <h1 className="text-2xl md:text-4xl font-medium">{slogan}</h1>
+          </div>
+          <div>
+            <LinkButton type="white" href="/invite">
+              <span>Invite Hibiki to your Discord</span>
+            </LinkButton>
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-end items-center">
-        <Logo className="w-64 h-64 rounded-full" />
+      {/* TODO: Show logo on small screens. */}
+      <div className="w-full h-full hidden md:flex justify-center md:justify-end items-center">
+        <Logo className="rounded-full w-32 h-32 md:w-64 md:h-64" />
       </div>
     </div>
   </HeroWrapper>

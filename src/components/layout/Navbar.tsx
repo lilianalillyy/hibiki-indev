@@ -1,46 +1,49 @@
-const Navbar = () => (
-  <nav className="px-12 pt-8 mx-auto w-full flex justify-center">
-    <div className="w-full">
-      <a href="#">
-        <h1 className="font-medium text-3xl">Hibiki</h1>
-        <h2 className="text-xl">Lorem ipsum dolor sit amet</h2>
-      </a>
-    </div>
-    <div className="w-full flex justify-center items-center">
-      <a href="" className="mr-8">
-        Support
-      </a>
-      <a href="" className="mr-8">
-        Contribute
-      </a>
-      <a href="" className="mr-8">
-        Support
-      </a>
-      <a href="">Self-host</a>
-    </div>
-    <div className="w-full flex justify-end">
-      <a href="#" className="inline-flex justify-center items-center">
-        <span className="mr-4 text-xl">Login</span>
-        <span className="translate">
-          <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
-              d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-            ></path>
-          </svg>
-        </span>
-      </a>
-    </div>
-  </nav>
+import { RenderableProps, ComponentProps } from "preact";
+import { transition } from "../../tailwind";
+import { name, slogan } from "../../constants";
+import { LinkButton } from "../elements/Button";
+
+// TODO: Use RouterLink
+const NavLink = ({ children, className = "", href = "#", ...props }: RenderableProps<ComponentProps<"a">>) => (
+  <a href={href} className={`text-black hover:text-gray-600 ${transition} ${className} font-medium`} {...props}>
+    {children}
+  </a>
 );
 
-export { Navbar };
+const Navbar = () => {
+  const navLinks: RenderableProps<ComponentProps<"a">>[] = [
+    { href: "/invite", children: "Invite" },
+    { href: "/donate", children: "Donate" },
+    { href: "/support", children: "Support" },
+    { href: "/contribute", children: "Contribute" },
+    { href: "/guide/self-host", children: "Self-host" },
+  ];
+
+  return (
+    <nav className="py-6 px-4 flex items-center justify-center">
+      <div className="w-full flex justify-start items-center">
+        {/* TODO: Use RouterLink */}
+        <a href="/" className={`text-black hover:text-gray-600 ${transition}`}>
+          <h1 className="font-medium text-2xl">{name}</h1>
+          <h2>{slogan}</h2>
+        </a>
+      </div>
+      <div className="w-full flex justify-center items-center">
+        {navLinks.map(({ className = "", children, ...link }, i) => (
+          <NavLink {...link} className={`${className} ${i !== navLinks.length - 1 && "mr-8"}`} key={i}>
+            {children}
+          </NavLink>
+        ))}
+      </div>
+      <div className="w-full flex justify-end items-center">
+        {/* TODO: Use RouterLink */}
+        <LinkButton type="outline-black" href="/login">
+          Login
+        </LinkButton>
+      </div>
+    </nav>
+  );
+};
+
+export { Navbar, NavLink };
 export default Navbar;

@@ -1,13 +1,17 @@
-import HeroWrapper from "../../components/elements/HeroWrapper";
 import MainHero from "./sections/MainHero";
+import AboutHero from "./sections/AboutHero";
+import FeatureHero from "./sections/FeatureHero";
+import InviteHero from "./sections/InviteHero";
 
 const LandingPage = () => (
-  <div className="w-full h-full p-8">
+  <>
     <MainHero />
-    <HeroWrapper className="p-8 flex justify-center items-center font-medium text-4xl h-screen">
-      Instructions unclear, stuck a dick in the blender.
-    </HeroWrapper>
-  </div>
+    <div className="pt-6 md:min-h-screen flex flex-col">
+      <FeatureHero />
+      <AboutHero />
+      <InviteHero />
+    </div>
+  </>
 );
 
 export { LandingPage };
