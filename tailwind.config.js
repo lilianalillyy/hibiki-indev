@@ -1,7 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: 'jit',
+  mode: "jit",
   purge: ["./index.html", "./src/**/*.{ts,js,tsx,jsx,vue,html}"],
   darkMode: "class",
   theme: {
@@ -13,14 +13,12 @@ module.exports = {
         tertiary: "bbadff",
         pink: {
           ...colors.pink,
-          DEFAULT:"dab6fc"
+          DEFAULT: "dab6fc",
         },
       },
       fontFamily: {
-        sans: [
-          'DM Sans'
-        ]
-      }
+        sans: ["DM Sans"],
+      },
     },
   },
   variants: {

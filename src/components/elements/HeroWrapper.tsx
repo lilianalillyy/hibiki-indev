@@ -1,13 +1,13 @@
-import { ComponentChildren, ComponentProps, PropsWithChildren } from "react";
+import { ComponentProps, PropsWithChildren } from "react";
 import { transition } from "../../tailwind";
 
-const HeroWrapper = ({ children, className = "", ...props }: PropsWithChildren<ComponentProps<"div">>) => (
-  <div
-    className={`w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${className} ${transition}`}
+const HeroWrapper = ({ children, className = "", ...props }: PropsWithChildren<ComponentProps<"a">>) => (
+  <a
+    className={`w-full h-full rounded-3xl py-12 px-16 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${className} ${transition}`}
     {...props}
   >
     {children}
-  </div>
+  </a>
 );
 
 export { HeroWrapper };
