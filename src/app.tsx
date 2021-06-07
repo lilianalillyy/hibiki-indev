@@ -1,4 +1,4 @@
-import { ComponentProps, RenderableProps } from "preact";
+import type { ComponentProps, RenderableProps } from "preact";
 import Logo from "./components/elements/Logo";
 import { mainBackground } from "./pages/landing/sections/MainHero";
 
