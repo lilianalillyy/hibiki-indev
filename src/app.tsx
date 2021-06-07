@@ -75,12 +75,12 @@ const App = () => (
           className={`w-full h-full rounded-3xl hover:shadow-2xl cursor-pointer ${transition}`}
           style={mainBackground}
         >
-          <div className="flex flex-col md:flex-row h-full max-w-7xl w-full mx-auto">
-            <div className="w-full h-full flex justify-start items-center">
-              <div>
+          <div className="flex flex-col-reverse md:flex-row h-full max-w-7xl w-full mx-auto">
+            <div className="w-full h-full flex justify-center md:justify-start items-center">
+              <div className="text-center md:text-left">
                 <div className="text-white mb-8">
-                  <h1 className="text-8xl font-medium">Hibiki</h1>
-                  <h1 className="text-4xl font-medium">
+                  <h1 className="text-6xl md:text-8xl font-medium">Hibiki</h1>
+                  <h1 className="text-2xl md:text-4xl font-medium">
                     The ultimate all-in-one Discord bot.
                   </h1>
                 </div>
@@ -94,20 +94,23 @@ const App = () => (
                 </div>
               </div>
             </div>
-            <div className="w-full h-full flex justify-end items-center">
-              <Logo className="rounded-full w-64 h-64" />
+            {/* TODO: do this */}
+            <div className="w-full h-full hidden md:flex justify-center md:justify-end items-center">
+              <Logo className="rounded-full w-32 h-32 md:w-64 md:h-64" />
             </div>
           </div>
         </div>
-        <div className="pt-6 h-screen flex flex-col">
+        <div className="pt-6 md:h-screen flex flex-col">
           <div className="flex flex-col md:flex-row h-full w-full">
-            <div className="w-full pb-6 pr-6">
+            <div className="w-full pb-6 md:pr-6">
               <div
                 className={`bg-cyan-400 w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
               >
                 <div>
-                  <h1 class="text-5xl font-bold">Make your server more fun.</h1>
-                  <h2 class="text-2xl font-medium">
+                  <h1 class="text-4xl md:text-5xl font-bold">
+                    Make your server more fun.
+                  </h1>
+                  <h2 class="text-xl md:text-2xl font-medium">
                     Hibiki comes with many fun and image commands.
                   </h2>
                 </div>
@@ -183,10 +186,10 @@ const App = () => (
                 className={`bg-teal-400 w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
               >
                 <div>
-                  <h1 class="text-5xl font-bold">
+                  <h1 class="text-4xl md:text-5xl font-bold">
                     Increase your server's productivity.
                   </h1>
-                  <h2 class="text-2xl font-medium">
+                  <h2 class="text-xl md:text-2xl font-medium">
                     Hibiki provides useful utilities to boost your productivity.
                   </h2>
                 </div>
@@ -259,15 +262,15 @@ const App = () => (
             </div>
           </div>
           <div className="flex flex-col md:flex-row h-full w-full">
-            <div className="w-full pb-6 pr-6">
+            <div className="w-full pb-6 md:pr-6">
               <div
                 className={`bg-rose-400 text-white w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
               >
                 <div>
-                  <h1 class="text-5xl font-bold">
+                  <h1 class="text-4xl md:text-5xl font-bold">
                     Everything is free, forever.
                   </h1>
-                  <h2 class="text-2xl font-medium">
+                  <h2 class="text-xl md:text-2xl font-medium">
                     We'll never lock features behind a paywall.
                   </h2>
 
@@ -290,10 +293,10 @@ const App = () => (
                   className={`bg-pink-400 text-white w-full h-full rounded-3xl p-8 flex flex-col justify-center hover:shadow-2xl cursor-pointer ${transition}`}
                 >
                   <div>
-                    <h1 class="text-5xl font-bold">
+                    <h1 class="text-4xl md:text-5xl font-bold">
                       Everything is customizable.
                     </h1>
-                    <h2 class="text-2xl font-medium">
+                    <h2 class="text-xl md:text-2xl font-medium">
                       Hibiki is designed to be tweaked and customized to your
                       liking.
                     </h2>
@@ -333,7 +336,8 @@ const App = () => (
               <div
                 className={`bg-primary text-white w-full h-full rounded-3xl p-8 flex flex-col justify-center items-center hover:shadow-2xl cursor-pointer ${transition}`}
               >
-                <div className="text-center">
+                {/* not centered here because everything is centered to the left and on phone it looks tupid */}
+                <div className="text-left md:text-center">
                   <h1 class="text-5xl font-bold">
                     Ready to improve your server?
                   </h1>
@@ -341,24 +345,24 @@ const App = () => (
                     1160 other server owners are already using Hibiki!
                   </h2>
 
-                  <div className="mt-10">
+                  <div className="mt-10 flex flex-col md:flex-row items-center">
                     <a
                       href=""
-                      className={`mr-6 bg-white text-black hover:shadow-2xl hover:text-primary py-2 px-6 rounded-full font-medium text-xl inline-flex items-center justify-center ${transition}`}
+                      className={`text-center mb-6 md:mb-0 md:mr-6 bg-white text-black hover:shadow-2xl hover:text-primary py-2 px-6 rounded-full font-medium text-xl inline-flex items-center justify-center ${transition}`}
                     >
                       <span>Add Hibiki to your server</span>
                     </a>
 
                     <a
                       href=""
-                      className={`mr-6 bg-white text-black hover:shadow-2xl hover:text-primary py-2 px-6 rounded-full font-medium text-xl inline-flex items-center justify-center ${transition}`}
+                      className={`text-center mb-6 md:mb-0 md:mr-6 bg-white text-black hover:shadow-2xl hover:text-primary py-2 px-6 rounded-full font-medium text-xl inline-flex items-center justify-center ${transition}`}
                     >
                       <span>View Source on GitHub</span>
                     </a>
 
                     <a
                       href=""
-                      className={`bg-white text-black hover:shadow-2xl hover:text-primary py-2 px-6 rounded-full font-medium text-xl inline-flex items-center justify-center ${transition}`}
+                      className={`text-center mb-6 md:mb-0 md:mr-6 bg-white text-black hover:shadow-2xl hover:text-primary py-2 px-6 rounded-full font-medium text-xl inline-flex items-center justify-center ${transition}`}
                     >
                       <span>Vote for Hibiki on Top.gg</span>
                     </a>
@@ -368,7 +372,7 @@ const App = () => (
             </div>
           </div>
           <footer className="py-12 px-4 flex flex-col md:flex-row text-black">
-            <div className="w-full flex justify-start items-center">
+            <div className="w-full flex justify-center md:justify-start items-center text-center md:text-left">
               <a
                 href="#"
                 className={`flex flex-col hover:text-gray-600 ${transition}`}
@@ -377,11 +381,11 @@ const App = () => (
                 <span className="">The ultimate all-in-one Discord bot.</span>
               </a>
             </div>
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full flex items-center justify-center  text-center md:text-left">
               {new Date().getFullYear()} &ndash; Hibiki, by sysdotini, resolved,
               and contributors.
             </div>
-            <div className="w-full flex flex-col justify-center items-end">
+            <div className="w-full flex flex-col justify-center items-center md:items-end mt-8 md:mt-0  text-center md:text-left">
               <a href="#" className="font-medium">
                 GitHub
               </a>
