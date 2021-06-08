@@ -3,7 +3,7 @@ import { LinkButton } from "../../../components/elements/Button";
 import { HeroTitle, HeroSubtitle } from "../../../components/typography/HeroTypography";
 
 const InviteHero = () => (
-  <HeroWrapper className={`bg-gradient-to-tr bg-gradient-2 from-primary to-primary text-white py-28`}>
+  <HeroWrapper hoverable={true} className={`bg-gradient-to-tr bg-gradient-2 from-primary to-primary text-white py-28`}>
     {/* Not centered on mobile because everything is centered to the left and it wouldn't look good. */}
     <div className="text-left md:text-center">
       <HeroTitle>Ready to improve your server?</HeroTitle>

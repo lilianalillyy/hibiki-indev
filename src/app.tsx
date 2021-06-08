@@ -1,9 +1,5 @@
 import Navbar from "./components/layout/Navbar";
-import MainHero from "./pages/landing/sections/MainHero";
 import Footer from "./components/layout/Footer";
-import { InviteHero } from "./pages/landing/sections/InviteHero";
-import { FeatureHero } from "./pages/landing/sections/FeatureHero";
-import { AboutHero } from "./pages/landing/sections/AboutHero";
 import LandingPage from "./pages/landing";
 
 /**

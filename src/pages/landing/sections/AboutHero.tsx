@@ -4,7 +4,7 @@ import { HeroSubtitle, HeroTitle } from "../../../components/typography/HeroTypo
 const AboutHero = () => (
   <div className="flex flex-col md:flex-row h-full w-full">
     <div className="w-full pb-6 md:pr-6">
-      <HeroWrapper className="bg-rose-400">
+      <HeroWrapper hoverable={true} className="bg-rose-400">
         <div>
           <HeroTitle>Everything is free, forever.</HeroTitle>
           <HeroSubtitle>We'll never lock features behind a paywall.</HeroSubtitle>
@@ -19,7 +19,7 @@ const AboutHero = () => (
     </div>
     <div className="w-full h-full flex flex-col">
       <div className="w-full h-full pb-6">
-        <HeroWrapper className="bg-pink-400 text-white">
+        <HeroWrapper hoverable={true} className="bg-pink-400 text-white">
           <div>
             <HeroTitle>Everything is customizable.</HeroTitle>
             <HeroSubtitle>Hibiki is designed to be tweaked and customized to your liking.</HeroSubtitle>
@@ -33,7 +33,7 @@ const AboutHero = () => (
       </div>
 
       <div className="w-full h-full pb-6">
-        <HeroWrapper className="bg-violet-400 text-white">
+        <HeroWrapper hoverable={true} className="bg-violet-400 text-white">
           <div>
             <HeroTitle>Hibiki is global.</HeroTitle>
             <HeroSubtitle>Every command, module, and feature is completely translatable.</HeroSubtitle>

@@ -2,6 +2,7 @@ import { PropsWithChildren, ComponentProps } from "react";
 import { transition } from "../../tailwind";
 import { name, slogan } from "../../constants";
 import { LinkButton } from "../elements/Button";
+import { motion } from "framer-motion";
 
 // TODO: Use RouterLink
 const NavLink = ({ children, className = "", href = "#", ...props }: PropsWithChildren<ComponentProps<"a">>) => (
@@ -20,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="py-6 px-4 flex items-center justify-center">
+    <motion.div className="py-6 px-4 flex items-center justify-center">
       <div className="w-full flex justify-start items-center">
         {/* TODO: Use RouterLink */}
         <a href="/" className={`text-black hover:text-gray-600 ${transition}`}>
@@ -41,7 +42,7 @@ const Navbar = () => {
           Login
         </LinkButton>
       </div>
-    </nav>
+    </motion.div>
   );
 };
 

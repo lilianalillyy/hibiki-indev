@@ -7,7 +7,6 @@ import { name, slogan } from "../../../constants";
 const mainBackground = {
   background: `url(${mainBg}) no-repeat`,
   backgroundSize: "cover",
-  backgroundAttachment: "fixed",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
 };
