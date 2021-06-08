@@ -4,6 +4,7 @@ import { name, slogan } from "../../constants";
 import { LinkButton } from "../elements/Button";
 import { Link, LinkProps } from "react-router-dom";
 import { MenuAlt3Icon } from "@heroicons/react/outline";
+import { useStoreState } from "../../store";
 
 /**
  * The NavLink accepts both to & href, where to has a bigger priority.
@@ -39,6 +40,8 @@ const Navbar = () => {
     { to: "/guide/self-host", children: "Self-host" },
   ];
 
+  const user = useStoreState((s) => s.users.user);
+
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => setDrawerOpen((val) => !val);
@@ -61,9 +64,8 @@ const Navbar = () => {
           ))}
         </div>
         <div className="w-full flex justify-end items-center">
-          {/* TODO: Use RouterLink */}
-          <LinkButton type="outline-black" href="/login" className="hidden md:inline-flex">
-            Login
+          <LinkButton type="outline-black" href={user ? "/dashboard" : "/login"} className="hidden md:inline-flex">
+            {user ? user.discord.tag : "Login"}
           </LinkButton>
           <button className="focus:outline-none p-2 rounded-xl bg-primary text-white inline-flex md:hidden" onClick={toggleDrawer}>
             <MenuAlt3Icon className="w-6 h-6" />
