@@ -1,5 +1,7 @@
 const colors = require("tailwindcss/colors");
 
+// just some WIP shit im trying out dont mind this
+
 /**
  * @param {string} s
  */
