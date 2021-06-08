@@ -9,6 +9,7 @@ const redirects: Record<string, string> = {
   "/contribute": "https://github.com/sysdotini/hibiki",
   "/login": "/invite", // TODO
   "/vote": "https://top.gg/bot/493904957523623936/vote",
+  "/privacy": "https://github.com/sysdotini/hibiki/blob/main/.github/PRIVACY_POLICY.md",
 };
 
 const kofi = "https://ko-fi.com/sysdotini";
