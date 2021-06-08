@@ -13,7 +13,7 @@ const FadeBox = ({
   children,
   yOffset = 24,
   easing = [0.42, 0, 0.58, 1],
-  delayOrder, // order of appearance
+  delayOrder = 1, // order of appearance
   ...props
 }: PropsWithChildren<ComponentProps<"div"> & FadeBoxProps>) => {
   const { inView, ref } = useInView({

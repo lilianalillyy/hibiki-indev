@@ -17,7 +17,7 @@ const App = () => (
         <BrowserRouter>
           <Switch>
             {Object.keys(redirects).map((r) => (
-              <Redirect from={r} to={redirects[r]} />
+              <Redirect from={r} to={redirects[r]} key={r} />
             ))}
           </Switch>
 

@@ -1,28 +1,30 @@
 import { PropsWithChildren, ComponentProps, useMemo, useState } from "react";
 import { transition } from "../../tailwind";
-import { name, slogan } from "../../constants";
+import { name, slogan, asExternal } from "../../constants";
 import { LinkButton } from "../elements/Button";
-import { motion } from "framer-motion";
 import { Link, LinkProps } from "react-router-dom";
-import { MenuAlt1Icon, MenuAlt2Icon, MenuAlt3Icon, MenuIcon } from "@heroicons/react/outline";
+import { MenuAlt3Icon } from "@heroicons/react/outline";
 
 /**
  * The NavLink accepts both to & href, where to has a bigger priority.
  * If to is set, the SPA routing will be used, otherwise the component will
- * act as a normal anchor.
+ * act as a normal anchor.¨
+ *
+ * Also supports openning URLs in new tabs.
  */
-type NavLinkProps = Omit<LinkProps, "to"> & { to?: LinkProps["to"]; href?: ComponentProps<"a">["href"] };
+type NavLinkProps = Omit<LinkProps, "to"> & { to?: LinkProps["to"]; href?: ComponentProps<"a">["href"]; newTab?: boolean };
 
 // TODO: Use RouterLink
-const NavLink = ({ children, className = "", to, href = "#", ...props }: PropsWithChildren<NavLinkProps>) => {
+const NavLink = ({ children, className = "", to, href = "#", newTab = false, ...props }: PropsWithChildren<NavLinkProps>) => {
   const classes = useMemo(() => `text-black hover:text-gray-600 ${transition} ${className} font-medium`, [transition, className]);
+  const tab = useMemo(() => (newTab ? external : {}), [newTab]);
 
   return to ? (
-    <Link to={to} className={classes} {...props}>
+    <Link to={to} className={classes} {...props} {...tab}>
       {children}
     </Link>
   ) : (
-    <a href={href} className={classes} {...props}>
+    <a href={href} className={classes} {...props} {...tab}>
       {children}
     </a>
   );
@@ -30,10 +32,10 @@ const NavLink = ({ children, className = "", to, href = "#", ...props }: PropsWi
 
 const Navbar = () => {
   const navLinks: PropsWithChildren<NavLinkProps>[] = [
-    { to: "/invite", children: "Invite" },
+    { href: "/invite", children: "Invite", newTab: true },
     { to: "/donate", children: "Donate" },
-    { to: "/support", children: "Support" },
-    { to: "/contribute", children: "Contribute" },
+    { to: "/support", children: "Support", newTab: true },
+    { to: "/contribute", children: "Contribute", newTab: true },
     { to: "/guide/self-host", children: "Self-host" },
   ];
 

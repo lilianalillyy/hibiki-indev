@@ -2,11 +2,23 @@ const name = "Hibiki";
 
 const slogan = "The ultimate all-in-one Discord bot.";
 
-// todo: fix redirects
 const redirects: Record<string, string> = {
-  "/invite": "https://hibiki.app/invite",
-  "/discord": "https://hibiki.app/discord",
-  "/contribute": "https://hibiki.app/contribute",
+  "/invite": "https://discord.com/login?redirect_to=/oauth2/authorize?client_id=493904957523623936&scope=bot&permissions=1581116663",
+  "/discord": "/support",
+  "/support": "https://discord.com/invite/gZEj4sM",
+  "/contribute": "https://github.com/sysdotini/hibiki",
+  "/login": "/invite", // TODO
+  "/vote": "https://top.gg/bot/493904957523623936/vote",
 };
 
-export { name, slogan, redirects };
+const kofi = "https://ko-fi.com/sysdotini";
+
+// Some helpers
+const external = {
+  target: "_blank",
+  rel: "noopenner noreferrer",
+};
+
+const asExternal = (obj: object) => ({ ...obj, ...external });
+
+export { name, slogan, redirects, kofi, external, asExternal };

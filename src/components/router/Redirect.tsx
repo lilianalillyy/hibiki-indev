@@ -28,7 +28,7 @@ const Redirect = ({ from, to }: RedirectProps) => {
           <div className="mt-12 text-center">
             Redirecting to{" "}
             <Link href={to} withBorder={true} className="font-medium">
-              {to}
+              {new URL(to).hostname}
             </Link>
           </div>
         </div>
