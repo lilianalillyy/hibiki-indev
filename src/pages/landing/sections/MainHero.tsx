@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import mainBg from "../../../assets/img/main-bg.svg";
 import { LinkButton } from "../../../components/elements/Button";
 import HeroWrapper from "../../../components/elements/HeroWrapper";
@@ -21,9 +22,9 @@ const MainHero = () => (
             <h1 className="text-2xl md:text-4xl font-medium">{slogan}</h1>
           </div>
           <div>
-            <LinkButton type="white" href="/invite">
+            <Link type="white" to="/about">
               <span>Invite Hibiki to your Discord</span>
-            </LinkButton>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import type { Component, ComponentProps, PropsWithChildren } from "react";
+import type { ComponentProps, PropsWithChildren } from "react";
 import { useMemo } from "react";
 import { transition } from "../../tailwind";
 
