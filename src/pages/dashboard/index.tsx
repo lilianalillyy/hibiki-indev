@@ -17,7 +17,7 @@ const DashboardIndexPage = () => {
 
       <ContentWrapper>
         <div className="mb-6">
-          <HeroSubtitle className="text-black">// todo: add icons for each action, think of more things to add...</HeroSubtitle>
+          <HeroSubtitle className="text-black">// todo: add icons for each action, think of more things to add</HeroSubtitle>
         </div>
         <div className="flex w-full h-1/2">
           <HeroWrapper hoverable={true} className="bg-pink-400 w-full h-full mr-8 py-28">
