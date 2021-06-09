@@ -1,5 +1,5 @@
 import { ComponentProps, PropsWithChildren } from "react";
-import { transition } from "../../tailwind";
+import { transition } from "../../utils/tailwind";
 
 interface LinkProps {
   withBorder?: boolean;

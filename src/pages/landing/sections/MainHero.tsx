@@ -1,8 +1,8 @@
 import mainBg from "../../../assets/img/main-bg.svg";
 import { LinkButton } from "../../../components/elements/Button";
-import HeroWrapper from "../../../components/elements/HeroWrapper";
+import HeroWrapper from "../../../components/wrappers/HeroWrapper";
 import Logo from "../../../components/elements/Logo";
-import { name, slogan } from "../../../constants";
+import { name, slogan } from "../../../utils/constants";
 
 const mainBackground = {
   background: `url(${mainBg}) no-repeat`,

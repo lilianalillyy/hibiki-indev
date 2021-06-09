@@ -1,4 +1,4 @@
-import { HeroWrapper } from "../../../components/elements/HeroWrapper";
+import { HeroWrapper } from "../../../components/wrappers/HeroWrapper";
 import { LinkButton } from "../../../components/elements/Button";
 import { HeroTitle, HeroSubtitle } from "../../../components/typography/HeroTypography";
 

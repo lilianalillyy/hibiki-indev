@@ -1,21 +1,30 @@
 import { motion } from "framer-motion";
 import { Easing } from "framer-motion/types/types";
-import { useMemo, useState, useEffect, PropsWithChildren, ComponentProps, useContext } from "react";
+import { useMemo, useState, useEffect, PropsWithChildren, ComponentProps } from "react";
 import { useInView } from "react-intersection-observer";
 
-interface FadeBoxProps {
+type JSXElements = keyof JSX.IntrinsicElements;
+
+// todo: move
+interface WithAs<T extends JSXElements> {
+  as?: T;
+}
+
+interface FadeBoxProps<T extends JSXElements> extends WithAs<T> {
   yOffset?: number;
   easing?: Easing;
   delayOrder?: number;
 }
 
-const FadeBox = ({
+const FadeBox = function <T extends JSXElements>({
+  // todo: fix typeerror
+  as = "div",
   children,
   yOffset = 24,
   easing = [0.42, 0, 0.58, 1],
   delayOrder = 1, // order of appearance
   ...props
-}: PropsWithChildren<ComponentProps<"div"> & FadeBoxProps>) => {
+}: PropsWithChildren<ComponentProps<T> & FadeBoxProps<T>>) {
   const { inView, ref } = useInView({
     triggerOnce: true,
   });
@@ -46,12 +55,14 @@ const FadeBox = ({
     },
   };
 
+  const Element = (motion as any)[as];
+
   return (
     // TODO: fix
     // @ts-ignore
-    <motion.div ref={ref} initial="hidden" animate={inView ? "show" : "hidden"} exit="hidden" variants={variants} {...props}>
-      {children} {inView}
-    </motion.div>
+    <Element ref={ref} initial="hidden" animate={inView ? "show" : "hidden"} exit="hidden" variants={variants} {...props}>
+      {children}
+    </Element>
   );
 };
 

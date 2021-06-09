@@ -99,7 +99,7 @@ class UserModel {
   @Property()
   public user: User | null =
     // @ts-ignore
-    { discord: { tag: "Mia#0000" } };
+    { discord: { tag: "SimpForEspi#4343", username: "SimpForEspi", avatar: "https://hibiki.app/public/img/espi.jpg" } };
 
   @Action()
   setUser(payload: User | null) {

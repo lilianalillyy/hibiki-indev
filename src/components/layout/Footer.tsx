@@ -1,4 +1,4 @@
-import { transition } from "../../tailwind";
+import { transition } from "../../utils/tailwind";
 import Link from "../elements/Link";
 import { NavLink } from "./Navbar";
 

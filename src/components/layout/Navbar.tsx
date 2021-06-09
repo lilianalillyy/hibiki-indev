@@ -1,9 +1,9 @@
 import { PropsWithChildren, ComponentProps, useMemo, useState } from "react";
-import { transition } from "../../tailwind";
-import { name, slogan } from "../../constants";
+import { icon, transition } from "../../utils/tailwind";
+import { name, slogan } from "../../utils/constants";
 import { LinkButton } from "../elements/Button";
 import { Link, LinkProps } from "react-router-dom";
-import { MenuAlt3Icon } from "@heroicons/react/outline";
+import { LoginIcon, MenuAlt3Icon } from "@heroicons/react/outline";
 import { useStoreState } from "../../store";
 
 /**
@@ -65,6 +65,11 @@ const Navbar = () => {
         </div>
         <div className="w-full flex justify-end items-center">
           <LinkButton type="outline-black" href={user ? "/dashboard" : "/login"} className="hidden md:inline-flex">
+            {user ? (
+              <img src={user.discord.avatar} className={`${icon.small} rounded-full mr-2`} />
+            ) : (
+              <LoginIcon className={`${icon.small} mr-2`} />
+            )}
             {user ? user.discord.tag : "Login"}
           </LinkButton>
           <button className="focus:outline-none p-2 rounded-xl bg-primary text-white inline-flex md:hidden" onClick={toggleDrawer}>

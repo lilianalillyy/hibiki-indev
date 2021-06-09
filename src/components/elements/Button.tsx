@@ -1,6 +1,6 @@
 import type { ComponentProps, PropsWithChildren } from "react";
 import { useMemo } from "react";
-import { transition } from "../../tailwind";
+import { transition } from "../../utils/tailwind";
 
 type ButtonType = "outline-black" | "white";
 

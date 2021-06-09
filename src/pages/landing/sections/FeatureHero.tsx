@@ -1,7 +1,7 @@
 import { Link } from "../../../components/elements/Link";
-import HeroWrapper from "../../../components/elements/HeroWrapper";
+import HeroWrapper from "../../../components/wrappers/HeroWrapper";
 import { HeroSubtitle, HeroTitle } from "../../../components/typography/HeroTypography";
-import { icon } from "../../../tailwind";
+import { icon } from "../../../utils/tailwind";
 import { PhotographIcon as ImageIcon, HeartIcon, CurrencyDollarIcon, CashIcon, GlobeIcon, BookOpenIcon } from "@heroicons/react/outline";
 
 const FeatureHero = () => (

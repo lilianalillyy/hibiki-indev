@@ -1,4 +1,4 @@
-import HeroWrapper from "../../../components/elements/HeroWrapper";
+import HeroWrapper from "../../../components/wrappers/HeroWrapper";
 import { HeroSubtitle, HeroTitle } from "../../../components/typography/HeroTypography";
 
 const AboutHero = () => (
