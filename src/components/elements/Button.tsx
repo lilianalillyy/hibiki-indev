@@ -1,5 +1,6 @@
 import type { ComponentProps, PropsWithChildren } from "react";
 import { useMemo } from "react";
+import { Link, LinkProps } from "react-router-dom";
 import { transition } from "../../utils/tailwind";
 
 type ButtonType = "outline-black" | "white";
@@ -25,13 +26,13 @@ const Button = ({ type = "white", children, className = "", ...props }: PropsWit
   );
 };
 
-const LinkButton = ({ type = "white", children, className = "", ...props }: PropsWithChildren<ComponentProps<"a"> & ButtonProps>) => {
+const LinkButton = ({ type = "white", children, className = "", ...props }: PropsWithChildren<LinkProps & ButtonProps>) => {
   const classes = useButtonTypeClass(type);
 
   return (
-    <a {...props} className={`${classes} ${className}`}>
+    <Link {...props} className={`${classes} ${className}`}>
       {children}
-    </a>
+    </Link>
   );
 };
 

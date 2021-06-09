@@ -42,7 +42,8 @@ const Navbar = () => {
 
   const user = useStoreState((s) => s.users.user);
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  // todo
+  const [, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => setDrawerOpen((val) => !val);
 
@@ -64,7 +65,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="w-full flex justify-end items-center">
-          <LinkButton type="outline-black" href={user ? "/dashboard" : "/login"} className="hidden md:inline-flex">
+          <LinkButton type="outline-black" to={user ? "/dashboard" : "/login"} className="hidden md:inline-flex">
             {user ? (
               <img src={user.discord.avatar} className={`${icon.small} rounded-full mr-2`} />
             ) : (
