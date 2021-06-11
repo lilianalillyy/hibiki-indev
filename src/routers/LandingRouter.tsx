@@ -1,13 +1,11 @@
 import { Route, RouteComponentProps, Switch } from "react-router";
-import Footer from "../components/layout/Footer";
-import Navbar from "../components/layout/Navbar";
 import { DonatePage, LandingPage } from "../pages";
 import { AnimatePresence } from "framer-motion";
+import LandingLayout from "../layouts/LandingLayout";
 
 const LandingRouter = ({ location }: RouteComponentProps) => {
   return (
-    <>
-      <Navbar />
+    <LandingLayout>
       <AnimatePresence>
         <Switch location={location}>
           <Route path="/" exact>
@@ -18,8 +16,7 @@ const LandingRouter = ({ location }: RouteComponentProps) => {
           </Route>
         </Switch>
       </AnimatePresence>
-      <Footer />
-    </>
+    </LandingLayout>
   );
 };
 

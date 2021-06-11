@@ -1,14 +1,12 @@
 import { Route, RouteComponentProps, Switch } from "react-router";
-import Footer from "../components/layout/Footer";
-import Navbar from "../components/layout/Navbar";
 import { DashboardIndexPage } from "../pages";
 import { AnimatePresence } from "framer-motion";
 import { joinPaths } from "../utils/router";
+import LandingLayout from "../layouts/LandingLayout";
 
 const DashboardRouter = ({ location, match }: RouteComponentProps) => {
   return (
-    <>
-      <Navbar />
+    <LandingLayout>
       <AnimatePresence>
         <Switch location={location}>
           <Route path={joinPaths(match.path, "/")} exact>
@@ -16,8 +14,7 @@ const DashboardRouter = ({ location, match }: RouteComponentProps) => {
           </Route>
         </Switch>
       </AnimatePresence>
-      <Footer />
-    </>
+    </LandingLayout>
   );
 };
 
