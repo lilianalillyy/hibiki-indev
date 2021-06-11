@@ -6,9 +6,10 @@ import { mainBackground } from "../landing/sections/MainHero";
 import FadeBox from "../../components/motion/FadeBox";
 import { LinkButton } from "../../components/elements/Button";
 import { kofi } from "../../constants";
+import PageWrapper from "../../components/wrappers/PageWrapper";
 
 const DonatePage = () => (
-  <>
+  <PageWrapper>
     <HeroWrapper delayOrder={1} style={mainBackground} className="h-auto">
       <HeroTitle className="inline-flex justify-center items-center">Donate</HeroTitle>
       <HeroSubtitle className="inline-flex justify-center items-center">Donate to keep Hibiki running</HeroSubtitle>
@@ -35,7 +36,7 @@ const DonatePage = () => (
         </LinkButton>
       </div>
     </FadeBox>
-  </>
+  </PageWrapper>
 );
 
 export { DonatePage };

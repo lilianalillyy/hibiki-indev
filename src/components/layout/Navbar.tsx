@@ -1,6 +1,6 @@
 import { PropsWithChildren, ComponentProps, useMemo, useState } from "react";
 import { transition } from "../../tailwind";
-import { name, slogan, asExternal } from "../../constants";
+import { name, slogan } from "../../constants";
 import { LinkButton } from "../elements/Button";
 import { Link, LinkProps } from "react-router-dom";
 import { MenuAlt3Icon } from "@heroicons/react/outline";
@@ -48,10 +48,10 @@ const Navbar = () => {
       <div className="py-6 px-4 flex items-center justify-center z-50">
         <div className="w-full flex justify-start items-center">
           {/* TODO: Use RouterLink */}
-          <a href="/" className={`text-black hover:text-gray-600 ${transition}`}>
+          <Link to="/" className={`text-black hover:text-gray-600 ${transition}`}>
             <h1 className="font-medium text-2xl">{name}</h1>
             <h2 className="hidden md:inline-block">{slogan}</h2>
-          </a>
+          </Link>
         </div>
         <div className="w-full justify-center items-center hidden md:flex">
           {navLinks.map(({ className = "", children, ...link }, i) => (
