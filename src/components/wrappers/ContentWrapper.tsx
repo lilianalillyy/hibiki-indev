@@ -2,16 +2,18 @@ import { ComponentProps, PropsWithChildren } from "react";
 import FadeBox from "../motion/FadeBox";
 
 interface ContentWrapperProps {
-  delayOrder?: number;
+  viewDelay?: number;
+  viewOffset?: number;
 }
 
 const ContentWrapper = ({
-  delayOrder = 5,
   className = "",
   children,
+  viewDelay = 1,
+  viewOffset = 0.15,
   ...props
 }: PropsWithChildren<ComponentProps<"div"> & ContentWrapperProps>) => (
-  <FadeBox delayOrder={delayOrder} className={`w-full ${className}`} {...props}>
+  <FadeBox viewDelay={viewDelay} viewOffset={viewOffset} className={`w-full ${className}`} {...props}>
     {children}
   </FadeBox>
 );

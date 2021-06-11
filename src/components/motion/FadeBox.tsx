@@ -13,7 +13,8 @@ interface WithAs<T extends JSXElements> {
 interface FadeBoxProps<T extends JSXElements> extends WithAs<T> {
   yOffset?: number;
   easing?: Easing;
-  delayOrder?: number;
+  viewDelay?: number;
+  viewOffset?: number;
 }
 
 const FadeBox = function <T extends JSXElements>({
@@ -22,7 +23,8 @@ const FadeBox = function <T extends JSXElements>({
   children,
   yOffset = 24,
   easing = [0.42, 0, 0.58, 1],
-  delayOrder = 1, // order of appearance
+  viewDelay = 1,
+  viewOffset = 0.15,
   ...props
 }: PropsWithChildren<ComponentProps<T> & FadeBoxProps<T>>) {
   const { inView, ref } = useInView({
@@ -30,11 +32,9 @@ const FadeBox = function <T extends JSXElements>({
   });
   const [delay, setDelay] = useState(0.1);
 
-  const offset = 0.15;
-
   useEffect(() => {
-    if (delayOrder) return setDelay(delayOrder * offset);
-  }, [delayOrder, offset]);
+    if (viewDelay) return setDelay(viewDelay * viewOffset);
+  }, [viewDelay, viewOffset]);
 
   const transition = useMemo(
     () => ({

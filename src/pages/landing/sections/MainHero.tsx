@@ -12,7 +12,7 @@ const mainBackground = {
 };
 
 const MainHero = () => (
-  <HeroWrapper style={mainBackground}>
+  <HeroWrapper viewOffset={0.1} style={mainBackground} fullscreen>
     <div className="flex flex-col-reverse md:flex-row h-full max-w-7xl w-full mx-auto">
       <div className="w-full h-full flex justify-center md:justify-start items-center">
         <div className="text-center md:text-left">
@@ -21,7 +21,7 @@ const MainHero = () => (
             <h1 className="text-2xl md:text-4xl font-medium">{slogan}</h1>
           </div>
           <div>
-            <LinkButton type="white" href="/invite" target="_blank" rel="noopenner noreferrer">
+            <LinkButton type="white" to="/invite" target="_blank" rel="noopenner noreferrer">
               <span>Invite Hibiki to your Discord</span>
             </LinkButton>
           </div>
