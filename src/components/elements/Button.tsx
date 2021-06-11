@@ -36,5 +36,15 @@ const LinkButton = ({ type = "white", children, className = "", ...props }: Prop
   );
 };
 
+const AnchorButton = ({ type = "white", children, className = "", ...props }: PropsWithChildren<ComponentProps<"a"> & ButtonProps>) => {
+  const classes = useButtonTypeClass(type);
+
+  return (
+    <a {...props} className={`${classes} ${className}`}>
+      {children}
+    </a>
+  );
+};
+
 export type { ButtonProps, ButtonType };
-export { Button, LinkButton, useButtonTypeClass };
+export { Button, LinkButton, AnchorButton, useButtonTypeClass };

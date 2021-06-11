@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Redirect } from "./components/router/Redirect";
 import { redirects } from "./utils/constants";
 import LandingRouter from "./routers/LandingRouter";
+import DashboardRouter from "./routers/DashboardRouter";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
                 <Redirect from={r} to={redirects[r]} key={r} />
               ))}
               <Route path="/" component={LandingRouter} />
+              <Route path="/dashboard" component={DashboardRouter} />
             </Switch>
           </BrowserRouter>
         </div>

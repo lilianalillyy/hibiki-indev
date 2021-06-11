@@ -3,7 +3,7 @@ import { HeroWrapper } from "../../components/wrappers/HeroWrapper";
 import { HeroSubtitle, HeroTitle } from "../../components/typography/HeroTypography";
 import { mainBackground } from "../landing/sections/MainHero";
 import FadeBox from "../../components/motion/FadeBox";
-import { LinkButton } from "../../components/elements/Button";
+import { AnchorButton } from "../../components/elements/Button";
 import { kofi } from "../../utils/constants";
 import { ContentWrapper } from "../../components/wrappers/ContentWrapper";
 import PageWrapper from "../../components/wrappers/PageWrapper";
@@ -31,9 +31,9 @@ const DonatePage = () => (
 
     <FadeBox delayOrder={10} className="p-8 max-w-7xl w-full mx-auto ">
       <div className="text-2xl flex  justify-center items-center">
-        <LinkButton href={kofi} type="outline-black" target="_blank" rel="noopener noreferrer">
+        <AnchorButton href={kofi} type="outline-black" target="_blank" rel="noopener noreferrer">
           Donate via Kofi
-        </LinkButton>
+        </AnchorButton>
       </div>
     </FadeBox>
   </PageWrapper>
