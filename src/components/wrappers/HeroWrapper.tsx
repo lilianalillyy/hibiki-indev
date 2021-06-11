@@ -9,9 +9,12 @@ interface HeroWrapperProps {
   fullscreen?: boolean;
   padding?: boolean;
   margin?: boolean;
+  as?: React.FC | string;
+  className?: string;
 }
 
-const HeroWrapper = ({
+const HeroWrapper = <TProps extends object = ComponentProps<"a">>({
+  as = "a",
   hoverable = false,
   children,
   className = "",
@@ -21,9 +24,9 @@ const HeroWrapper = ({
   padding = true,
   margin = true,
   ...props
-}: PropsWithChildren<ComponentProps<"a"> & HeroWrapperProps>) => (
+}: PropsWithChildren<TProps & HeroWrapperProps>) => (
   <FadeBox
-    as="a"
+    as={as}
     viewDelay={viewDelay}
     viewOffset={viewOffset}
     {...(hoverable ? { whileHover: { scale: 0.98 } } : {})}

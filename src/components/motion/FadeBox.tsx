@@ -1,32 +1,33 @@
 import { motion } from "framer-motion";
 import { Easing } from "framer-motion/types/types";
-import { useMemo, useState, useEffect, PropsWithChildren, ComponentProps } from "react";
+import { useMemo, useState, useEffect, PropsWithChildren, ComponentProps, forwardRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 type JSXElements = keyof JSX.IntrinsicElements;
 
 // todo: move
-interface WithAs<T extends JSXElements> {
-  as?: T;
+interface WithAs {
+  as?: React.FC | string;
 }
 
-interface FadeBoxProps<T extends JSXElements> extends WithAs<T> {
+interface FadeBoxProps extends WithAs {
   yOffset?: number;
   easing?: Easing;
   viewDelay?: number;
   viewOffset?: number;
+  [key: string]: any;
 }
 
-const FadeBox = function <T extends JSXElements>({
+const FadeBox = function ({
   // todo: fix typeerror
-  as = "div",
+  as = "a",
   children,
   yOffset = 24,
   easing = [0.42, 0, 0.58, 1],
   viewDelay = 1,
   viewOffset = 0.15,
   ...props
-}: PropsWithChildren<ComponentProps<T> & FadeBoxProps<T>>) {
+}: PropsWithChildren<FadeBoxProps>) {
   const { inView, ref } = useInView({
     triggerOnce: true,
   });
@@ -55,7 +56,7 @@ const FadeBox = function <T extends JSXElements>({
     },
   };
 
-  const Element = (motion as any)[as];
+  const Element = typeof as === "string" ? (motion as any)[as] : motion(as);
 
   return (
     // TODO: fix

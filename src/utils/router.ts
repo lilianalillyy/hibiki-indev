@@ -2,7 +2,7 @@ const joinPaths = (...str: string[]) => {
   let s = str
     .map((s) => {
       // If the string starts with /, remove it
-      s = s.startsWith("/") ? s.substr(0, s.length) : s;
+      s = s.startsWith("/") ? s.substr(1, s.length) : s;
       // If the string starts with /, remove it
       s = s.endsWith("/") ? s.substr(0, s.length - 1) : s;
 
@@ -11,8 +11,8 @@ const joinPaths = (...str: string[]) => {
     // Join paths
     .join("/");
 
-  // Remove ending /
-  s = s.substr(0, s.length - 1);
+  // Prepend /
+  s = `/${s}`;
 
   return s;
 };

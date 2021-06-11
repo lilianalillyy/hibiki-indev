@@ -7,7 +7,7 @@ import { PhotographIcon as ImageIcon, HeartIcon, CurrencyDollarIcon, CashIcon, G
 const FeatureHero = () => (
   <div className="flex flex-col md:flex-row h-full w-full">
     <div className="w-full pb-6 md:pr-6">
-      <HeroWrapper viewOffset={0.2} hoverable={true} href="/about/fun" className="bg-cyan-400">
+      <HeroWrapper viewOffset={0.2} hoverable={true} className="bg-cyan-400">
         <div>
           <HeroTitle>Make your server more fun.</HeroTitle>
           <HeroSubtitle>Hibiki comes with many fun and image commands.</HeroSubtitle>
@@ -27,9 +27,7 @@ const FeatureHero = () => (
           </div>
         </div>
         <div className="flex justify-end w-full mt-16">
-          <Link withBorder={true} className="border-white text-white">
-            Find out more
-          </Link>
+          <span className="font-bold border-b-2 border-white text-white">Find out more</span>
         </div>
       </HeroWrapper>
     </div>
@@ -54,9 +52,7 @@ const FeatureHero = () => (
           </div>
         </div>
         <div className="flex justify-end w-full mt-16">
-          <a href="" className="font-bold border-b-2 border-white text-white">
-            Find out more
-          </a>
+          <span className="font-bold border-b-2 border-white text-white">Find out more</span>
         </div>
       </HeroWrapper>
     </div>

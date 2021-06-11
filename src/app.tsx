@@ -14,8 +14,8 @@ const App = () => {
               {Object.keys(redirects).map((r) => (
                 <Redirect from={r} to={redirects[r]} key={r} />
               ))}
-              <Route path="/" component={LandingRouter} />
               <Route path="/dashboard" component={DashboardRouter} />
+              <Route path="/" component={LandingRouter} />
             </Switch>
           </BrowserRouter>
         </div>
