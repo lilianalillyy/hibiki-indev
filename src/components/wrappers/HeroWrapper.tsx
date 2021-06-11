@@ -9,11 +9,11 @@ interface HeroWrapperProps {
   fullscreen?: boolean;
   padding?: boolean;
   margin?: boolean;
-  as?: React.FC | string;
+  as?: any | string;
   className?: string;
 }
 
-const HeroWrapper = <TProps extends object = ComponentProps<"a">>({
+const HeroWrapper = <TProps extends {} = ComponentProps<"a">>({
   as = "a",
   hoverable = false,
   children,

@@ -8,12 +8,9 @@ const LandingRouter = ({ location }: RouteComponentProps) => {
     <LandingLayout>
       <AnimatePresence>
         <Switch location={location}>
-          <Route path="/" exact>
-            <LandingPage />
-          </Route>
-          <Route path="/donate" exact>
-            <DonatePage />
-          </Route>
+          <Route path="/donate" exact component={DonatePage} />
+          {/* TODO: cards */}
+          <Route path={["/", "/:name"]} exact component={LandingPage} />
         </Switch>
       </AnimatePresence>
     </LandingLayout>

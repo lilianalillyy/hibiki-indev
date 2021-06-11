@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Easing } from "framer-motion/types/types";
-import { useMemo, useState, useEffect, PropsWithChildren, ComponentProps, forwardRef } from "react";
+import { useMemo, useState, useEffect, PropsWithChildren, ComponentProps } from "react";
 import { useInView } from "react-intersection-observer";
-
-type JSXElements = keyof JSX.IntrinsicElements;
 
 // todo: move
 interface WithAs {
@@ -18,7 +16,7 @@ interface FadeBoxProps extends WithAs {
   [key: string]: any;
 }
 
-const FadeBox = function ({
+const FadeBox = function <TProps extends {} = ComponentProps<"a">>({
   // todo: fix typeerror
   as = "a",
   children,
@@ -27,7 +25,7 @@ const FadeBox = function ({
   viewDelay = 1,
   viewOffset = 0.15,
   ...props
-}: PropsWithChildren<FadeBoxProps>) {
+}: PropsWithChildren<FadeBoxProps & TProps>) {
   const { inView, ref } = useInView({
     triggerOnce: true,
   });
