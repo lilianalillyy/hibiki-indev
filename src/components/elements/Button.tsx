@@ -1,4 +1,4 @@
-import type { ComponentProps, PropsWithChildren } from "react";
+import type { ComponentProps, HTMLProps, PropsWithChildren } from "react";
 import { useMemo } from "react";
 import { Link, LinkProps } from "react-router-dom";
 import { transition } from "../../utils/tailwind";
@@ -16,7 +16,7 @@ const buttonTypeClasses = {
 
 const useButtonTypeClass = (type: keyof typeof buttonTypeClasses) => useMemo(() => buttonTypeClasses[type], [type]);
 
-const Button = ({ type = "white", children, className = "", ...props }: PropsWithChildren<ComponentProps<"button"> & ButtonProps>) => {
+const Button = ({ type = "white", children, className = "", ...props }: PropsWithChildren<HTMLProps<HTMLButtonElement> & ButtonProps>) => {
   const classes = useButtonTypeClass(type);
 
   return (
